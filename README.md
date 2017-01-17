@@ -10,5 +10,5 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: LezardValeth97
+* Name: KieuQuocViet
 * ID: USTH-BI6-153
