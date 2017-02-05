@@ -1,0 +1,15 @@
++1.wc /etc/passwd 
++  35   57 18888 /etc/passwd 
++ 
++2.free 
++              total        used       free        shared     buffers    cached 
++Mem:        1016464      850448     166016          6036       98976    308292
+-/+ buffers/cache:        443180     573284
++Swap:       1046524       61780     984744 
++ 
++ 
++3. cat /proc/cpuinfo 
+bash: cat/proc/cpuinfo: No such file or directory
++﻿4. ls>m 
++cat m|grep list m 
++ 
