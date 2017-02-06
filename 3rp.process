@@ -1,0 +1,78 @@
++$ ps -e
++...
++4391 ?        00:00:00 unity-files-dae
++4452 ?        00:00:00 kworker/3:2
++4454 ?        00:00:00 gedit
++4491 ?        00:00:00 gvfsd-http
++4669 ?        00:00:00 kworker/u16:1
++4677 ?        00:00:00 kworker/1:0
++4904 ?        00:00:00 kworker/2:2
++5038 ?        00:00:00 kworker/3:1
++5131 ?        00:00:00 kworker/1:2
++5165 ?        00:00:00 gnome-terminal-
++5172 pts/4    00:00:00 bash
++5186 pts/4    00:00:00 ps
++
++~$ gnome-calculator &
++[1] 5188
++
++~$ ps -e | grep "gnome-calculato"
++ 5188 pts/4    00:00:00 gnome-calculato
++
++~$ cat /proc/5188/status
++Name:	gnome-calculato
++State:	S (sleeping)
++Tgid:	5188
++Ngid:	0
++Pid:	5188
++PPid:	5172
++TracerPid:	0
++Uid:	1000	1000	1000	1000
++Gid:	1000	1000	1000	1000
++FDSize:	256
++Groups:	4 24 27 30 46 113 128 1000 
++NStgid:	5188
++NSpid:	5188
++NSpgid:	5188
++NSsid:	5172
++VmPeak:	  639848 kB
++VmSize:	  639848 kB
++VmLck:	       0 kB
++VmPin:	       0 kB
++VmHWM:	   36332 kB
++VmRSS:	   36332 kB
++VmData:	  374064 kB
++VmStk:	     136 kB
+++VmExe:	     392 kB
++VmLib:	   59656 kB
++VmPTE:	     508 kB
++VmPMD:	      16 kB
++VmSwap:	       0 kB
++HugetlbPages:	       0 kB
++Threads:	4
++SigQ:	0/15117
++SigPnd:	0000000000000000
++ShdPnd:	0000000000000000
++SigBlk:	0000000000000000
++SigIgn:	0000000000001000
++SigCgt:	0000000180000000
++CapInh:	0000000000000000
++CapPrm:	0000000000000000
++CapEff:	0000000000000000
++CapBnd:	0000003fffffffff
++CapAmb:	0000000000000000
++Seccomp:	0
++Cpus_allowed:	ff
++Cpus_allowed_list:	0-7
++Mems_allowed:	00000000,00000001
++Mems_allowed_list:	0
++voluntary_ctxt_switches:	302
++nonvoluntary_ctxt_switches:	25
++
++~$ kill -stop 5188
++...
++[1]+  Stopped                 gnome-calculator
+
+
+
+
