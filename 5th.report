@@ -1,0 +1,12 @@
+lezardvaleth@lezardvaleth-HP-EliteBook-8470p:~$ cat /proc/sched_debug | grep "systemd"
+ systemd-timesyn  2202        18.755965        49   120         0.618660        12.462988    934637.507755 0 0 /autogroup-34
+         systemd  3008        18.629666        11   120         1.387565        18.594857    112433.006166 0 0 /autogroup-99
+ systemd-journal   938        24.439269       679   120        32.921933       160.330520    967459.077815 0 0 /autogroup-7
+  systemd-logind  2634         3.377806       367   120        24.254538        38.547045    899836.369196 0 0 /autogroup-61
+   systemd-udevd   969      1840.499373       804   120        64.748379       726.163810    937076.170317 0 0 /autogroup-12
+         systemd     1       336.805976      1746   120        48.277354      1123.919488    973888.854910 0 0 /autogroup-2
+lezardvaleth@lezardvaleth-HP-EliteBook-8470p:~$ cat /proc/1/sched | grep "switches"
+nr_switches                                  :                 1746
+nr_voluntary_switches                        :                 1366
+nr_involuntary_switches                      :                  380
+
