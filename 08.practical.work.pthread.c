@@ -46,34 +46,33 @@ void *threadProduce(void *param) {
 	a2.type = '0';
 	a2.amount = '1';
 	a2.unit = '0';
-	printf("Producing 2nd item: type = %c, amount = %d, unit = %c", a2.type, a2.amount, a2.unit);
+	printf("\nProducing 2nd item: type = %c, amount = %d, unit = %c", a2.type, a2.amount, a2.unit);
 
 	item a3;
 	a3.type = '0';
 	a3.amount = '0';
 	a3.unit = '1';
-	printf("Producing 3rd item: type = %c, amount = %d, unit = %c", a3.type, a3.amount, a3.unit);
+	printf("\nProducing 3rd item: type = %c, amount = %d, unit = %c", a3.type, a3.amount, a3.unit);
 
-	printf("\tFirst: %d, Last: %d\n", first, last);
+	printf("\n\tFirst: %d, Last: %d\n", first, last);
 	produce(&a1);
 	
-	printf("\tFirst: %d, Last: %d\n", first, last);
+	printf("\n\tFirst: %d, Last: %d\n", first, last);
 	produce(&a2);
 
-	printf("'tFirst: %d, Last: %d\n", first, last);
+	printf("\n\tFirst: %d, Last: %d\n", first, last);
 	produce(&a3);
 }
 
-Void *threadConsume(void *param) {
-	printf("Consume 1st item:\n");
-	consume;
+void *threadConsume(void *param) {
+	printf("Consuming an item!\n");
+	consume();
+	printf("'tFirst: %d, Last: %d\n", first, last);
+
+	printf("Consuming an another item!\n");
+	consume();
 	printf("\tFirst: %d, Last: %d\n", first, last);
-	printf("Consume 2nd item:\n");
-	consume;
-	printf("\tFirst: %d, Last: %d\n", first, last);
-	printf("Consume 3rd item:\n");
-	consume;
-	printf("\tFirst: %d, Last: %d\n", first, last);
+}
 	
 int main() {
 // create a background thread to execute threadProduce, threadConsume
@@ -85,9 +84,9 @@ int main() {
 	NULL);		// argument to thread function
 	pthread_join(pro, NULL);
 	pthread_create(
-	%con,
+	&con,
 	NULL,
 	threadConsume,
 	NULL);
-	return 0;
+	pthread_join(con, NULL);
 }
